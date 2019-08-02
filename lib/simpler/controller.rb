@@ -33,9 +33,8 @@ module Simpler
     end
 
     def write_response
-      body = render_body
-
-      @response.write(body)
+        body = render_body
+        @response.write(body)
     end
 
     def render_body
@@ -43,7 +42,7 @@ module Simpler
     end
 
     def params
-      @request.params
+      @request.params.merge!(@request.env['simpler.params'])
     end
 
     def render(template)
