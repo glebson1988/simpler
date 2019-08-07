@@ -32,7 +32,7 @@ module Simpler
       end
 
       def to_path_pattern(path)
-        Regexp.new("^#{path.gsub(/:([\w_]+)/, '[0-9]+')}$")
+        Regexp.new("^#{path.gsub(/:([\w_]+)/, '[0-9a-z_]+')}$")
       end
 
       def to_params_pattern(path)
